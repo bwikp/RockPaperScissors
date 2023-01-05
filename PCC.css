@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+#interface {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+.line{
+    height: 100%;
+    width:33.4%;
+}
+#score{
+    height: 5%;
+    background-color: gold;
+    padding: 1.5% 0 1.5% 0%;
+    justify-content: center;
+    align-items: center ;
+}
+
+#p{
+    
+    background: url("image/pierre.png");
+    background-size: 50%;
+    background-color: lightcyan;
+}
+
+#f{
+    background: url("image/feuille.jpg");
+    background-size: 50%;
+    background-color: lightyellow;
+}
+#c{
+    background: url("image/ciseaux.jpg");
+    background-size: 50%;
+    background-color: lightcoral;
+}
