@@ -16,24 +16,11 @@ function DivTada(couleur) {
     let buttonRejouer = document.createElement("div")
     document.querySelector("#interface").appendChild(divResulte)
     divResulte.appendChild(buttonRejouer)
-    divResulte.style.height = "100%";
-    divResulte.style.width = "100%"
+    divResulte.classList.add("div-resulte")
+    buttonRejouer.classList.add("boutton-rejouer")
     divResulte.style.backgroundColor = couleur;
-    divResulte.style.position = "absolute";
-    divResulte.style.top = '0px';
-    // divResulte.style.opacity = "0.75";
-    divResulte.style.display = "flex";
-    divResulte.style.zIndex = 99;
-    divResulte.style.justifyContent = "center";
-    divResulte.style.alignItems = "center";
-        buttonRejouer.style.height = "250px";
-        buttonRejouer.style.width = "250px";
-        buttonRejouer.style.background = "gold"
         buttonRejouer.textContent = "REJOUER"
-        buttonRejouer.style.fontSize = "32px"
-        buttonRejouer.style.display ="flex"
-        buttonRejouer.style.justifyContent = "center";
-        buttonRejouer.style.alignItems = "center";
+
 }
 
 function choixPierre() {
@@ -46,7 +33,7 @@ function choixPierre() {
     }
     if (pierrepapierCiseaux[ordiSign] == "ciseaux") {
         console.log("gagné")
-        DivTada("green")
+        DivTada("#0080004f")
         scoreValeur += 1;
     }
     ordiSign = randomResult();
@@ -61,7 +48,7 @@ function choixCiseaux() {
         scoreValeur -= 1;
     }
     if (pierrepapierCiseaux[ordiSign] == "papier") {
-        DivTada("green");
+        DivTada("#0080004f");
         scoreValeur += 1;
     }
     if (pierrepapierCiseaux[ordiSign] == "ciseaux") {
@@ -75,8 +62,7 @@ function choixCiseaux() {
 }
 function choixFeuille() {
     if (pierrepapierCiseaux[ordiSign] == "pierre") {
-        console.log("gagné")
-        DivTada("#ff000038")
+        DivTada("#0080004f")
         scoreValeur += 1;
 
     }

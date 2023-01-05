@@ -5,8 +5,25 @@
     width: 100%;
 }
 
-
-
+div.div-resulte{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boutton-rejouer{
+    height: 250px;
+    width : 250px;
+    background :gold;
+    font-size: 32px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #interface {
     display:flex;
     flex-direction: row;
@@ -16,6 +33,7 @@
 .line{
     height: 100%;
     width:33.4%;
+    color: #0080004f;
 }
 #score{
     height: 5%;
