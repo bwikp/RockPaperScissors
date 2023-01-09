@@ -2,10 +2,11 @@ let pierre = document.querySelector("#p")
 let feuille = document.querySelector("#f")
 let ciseaux = document.querySelector("#c")
 let scoreTxt = document.querySelector("#score")
-let scoreValeur = 0;
+let scoreJoueur = 0;
+let scoreOrdi = 0;
 const pierrepapierCiseaux = ["pierre", "papier", "ciseaux"]
 let ordiSign = randomResult();
-score.textContent = "SCORE: " + scoreValeur
+score.textContent =  "Joueur:"+scoreJoueur +" " +scoreOrdi+ ":Ordi";
 
 let divResulte = document.createElement("div");
 let buttonRejouer = document.createElement("div")
@@ -54,14 +55,14 @@ function choixPierre() {
     }
     if (pierrepapierCiseaux[ordiSign] == "papier") {
         DivTada("#ff000038");
-        scoreValeur -= 1;
+        scoreOrdi += 1;
     }
     if (pierrepapierCiseaux[ordiSign] == "ciseaux") {
         DivTada("#0080004f")
-        scoreValeur += 1;
+        scoreJoueur += 1;
     }
     ordiSign = randomResult();
-    score.textContent = "SCORE: " + scoreValeur
+    score.textContent =  "Joueur:"+scoreJoueur +" " +scoreOrdi+ ":Ordi";
     console.log("nouveau resultat :" + pierrepapierCiseaux[ordiSign]);
 
 }
@@ -69,16 +70,17 @@ function choixPierre() {
 function choixCiseaux() {
     if (pierrepapierCiseaux[ordiSign] == "pierre") {
         DivTada("#ff000038");
-        scoreValeur -= 1;
+        scoreOrdi += 1;
     }
     if (pierrepapierCiseaux[ordiSign] == "papier") {
         DivTada("#0080004f");
-        scoreValeur += 1;
+        scoreJoueur += 1;
     }
     if (pierrepapierCiseaux[ordiSign] == "ciseaux") {
         DivTada("#efeee933");
     }
     console.log("nouveau resultat :" + pierrepapierCiseaux[ordiSign]);
+    score.textContent =  "Joueur:"+scoreJoueur +" " +scoreOrdi+ ":Ordi";
     ordiSign = randomResult();
 
     score.textContent = "SCORE: " + scoreValeur
@@ -86,7 +88,7 @@ function choixCiseaux() {
 function choixFeuille() {
     if (pierrepapierCiseaux[ordiSign] == "pierre") {
         DivTada("#0080004f")
-        scoreValeur += 1;
+        scoreJoueur += 1;
 
     }
     if (pierrepapierCiseaux[ordiSign] == "papier") {
@@ -94,12 +96,12 @@ function choixFeuille() {
     }
     if (pierrepapierCiseaux[ordiSign] == "ciseaux") {
         DivTada("#ff000038");
-        scoreValeur -= 1;
+        scoreOrdi += 1;
 
 
     }
     ordiSign = randomResult();
-    score.textContent = "SCORE: " + scoreValeur
+    score.textContent =  "Joueur:"+scoreJoueur +" " +scoreOrdi+ ":Ordi";
     console.log("nouveau resultat :" + pierrepapierCiseaux[ordiSign]);
 }
 
