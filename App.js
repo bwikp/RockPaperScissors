@@ -39,9 +39,24 @@ function DivTada(couleur) {
            setTimeout(()=>{
             interface.removeChild(divResulte)
             divResulte.removeChild(choixOrdi)
-           },500)
+           },1000)
         }
+        if (couleur == "#ff000038")
+        {   buttonRejouer.textContent ="PERDU"
+            setTimeout(()=>{
+                buttonRejouer.textContent ="REJOUER" 
+            },750) 
+            
+        }
+        if ( couleur == "#0080004f")
+           {
+             buttonRejouer.textContent = "GAGNE"
+             setTimeout(()=>{
+                buttonRejouer.textContent = "REJOUER"
+             },750)
+           }
 }
+
 function rejouer(){
     interface.removeChild(divResulte)
     divResulte.removeChild(choixOrdi)
