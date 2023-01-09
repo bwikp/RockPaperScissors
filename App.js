@@ -7,32 +7,56 @@ const pierrepapierCiseaux = ["pierre", "papier", "ciseaux"]
 let ordiSign = randomResult();
 score.textContent = "SCORE: " + scoreValeur
 
-
+let divResulte = document.createElement("div");
+let buttonRejouer = document.createElement("div")
+let interface = document.querySelector("#interface")
+let choixOrdi = document.createElement("img")
+    divResulte.appendChild(buttonRejouer)    
+    divResulte.appendChild(choixOrdi)
 function randomResult() {
     return Math.floor(Math.random() * 3);
 }
 function DivTada(couleur) {
-    let divResulte = document.createElement("div");
-    let buttonRejouer = document.createElement("div")
-    document.querySelector("#interface").appendChild(divResulte)
-    divResulte.appendChild(buttonRejouer)
+    interface.appendChild(divResulte)
+    divResulte.appendChild(choixOrdi)
     divResulte.classList.add("div-resulte")
     buttonRejouer.classList.add("boutton-rejouer")
+    if(pierrepapierCiseaux[ordiSign] == "pierre")
+     {
+        choixOrdi.src="image/pierre.png"
+        
+     } else {
+    choixOrdi.src ="image/"+pierrepapierCiseaux[ordiSign]+".jpg"
+     }
     divResulte.style.backgroundColor = couleur;
         buttonRejouer.textContent = "REJOUER"
+        document.querySelector("#interface").appendChild(divResulte)
+        divResulte.appendChild(buttonRejouer)
 
+        if (couleur == "#efeee933")
+        {   buttonRejouer.textContent ="EGALITE"
+           setTimeout(()=>{
+            interface.removeChild(divResulte)
+            divResulte.removeChild(choixOrdi)
+           },500)
+        }
 }
+function rejouer(){
+    interface.removeChild(divResulte)
+    divResulte.removeChild(choixOrdi)
+}
+
+buttonRejouer.addEventListener("click",rejouer)  
 
 function choixPierre() {
     if (pierrepapierCiseaux[ordiSign] == "pierre") {
+            DivTada("#efeee933");
     }
     if (pierrepapierCiseaux[ordiSign] == "papier") {
-        console.log("perdu")
         DivTada("#ff000038");
         scoreValeur -= 1;
     }
     if (pierrepapierCiseaux[ordiSign] == "ciseaux") {
-        console.log("gagné")
         DivTada("#0080004f")
         scoreValeur += 1;
     }
@@ -52,8 +76,7 @@ function choixCiseaux() {
         scoreValeur += 1;
     }
     if (pierrepapierCiseaux[ordiSign] == "ciseaux") {
-        console.log("égalités")
-
+        DivTada("#efeee933");
     }
     console.log("nouveau resultat :" + pierrepapierCiseaux[ordiSign]);
     ordiSign = randomResult();
@@ -67,9 +90,7 @@ function choixFeuille() {
 
     }
     if (pierrepapierCiseaux[ordiSign] == "papier") {
-        console.log("égalité")
-        ordiSign = randomResult();
-
+        DivTada("#efeee933");
     }
     if (pierrepapierCiseaux[ordiSign] == "ciseaux") {
         DivTada("#ff000038");
